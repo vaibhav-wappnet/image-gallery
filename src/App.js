@@ -1,9 +1,15 @@
 import './App.css';
+import Header from "./Components/Header";
+import Images from "./Components/Images";
+import SearchField from "./Utils/SearchField";
 
 function App() {
   return (
     <div className="App">
-      <h1>Vaibhav</h1>
+      <Header>
+        <SearchField />
+      </Header>
+      <Images />
     </div>
   );
 }
