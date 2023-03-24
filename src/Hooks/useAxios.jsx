@@ -1,21 +1,21 @@
-import React, { useEffect, useState } from 'react'
-import { axios } from "axios";
-import { url } from 'inspector';
+import  { useEffect, useState } from 'react'
+import axios from "axios";
+import { API_URL } from "../API/config";
 
 
-const useAxios = (value) => {
+const useAxios = (param) => {
 
-    const [response, setResponse] = useState;
-    const [isLoading, setIsLoading] = useState;
-    const [error, setError] = useState;
+    const [response, setResponse] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+    const [error, setError] = useState('');
 
-    axios.defaults.baseURL = "https://api.unsplash.com";
+    axios.defaults.baseURL = API_URL;
 
     const fetchData = async (url) => {
         try {
             setIsLoading(true);
             const response = await axios(url);
-            setResponse(response.data.result);
+            setResponse(response.data.results);
         }
         catch {
             setError(error);
@@ -26,8 +26,8 @@ const useAxios = (value) => {
     }
 
     useEffect(() => {
-        fetchData(value);
-    }, [value])
+        fetchData(param);
+    }, [param])
 
     return {
         response,

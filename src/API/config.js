@@ -1,3 +1,3 @@
-export const API_ACCESS_KEY = "KKgN4YAQvofkZp0IeRMnsz_Q0coPrYDKwjfosLCwmls";
+export const API_URL = "https://api.unsplash.com"
 
-export const API_URL = ""
+export const accessKey = "l3GZwx5jM3LvTTSe-fsNOE9O9LXD-HiCD6ipDYcarLE";
